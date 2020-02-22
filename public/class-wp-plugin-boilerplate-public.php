@@ -52,7 +52,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-css-public', plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name . '-css-common');
 
 	}
@@ -75,7 +75,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/colunteer-registration-fields-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name . '-js-public', plugin_dir_url( __FILE__ ) . 'js/colunteer-registration-fields-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name . '-js-common');
 
 	}

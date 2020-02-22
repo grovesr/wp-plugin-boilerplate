@@ -90,10 +90,10 @@ class Wp_Plugin_Boilerplate {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-plugin-boilerplate-i18n.php';
 
         /**
-         * The class responsible for registering all actions that occur in the common areas
+         * The class responsible for registering all actions that occur accross public and admin areas
          * of the site.
          */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-plugin-boilerplate-common.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'common/class-wp-plugin-boilerplate-common.php';
 
         /**
          * The class responsible for defining all actions that occur in the admin area.
@@ -107,6 +107,7 @@ class Wp_Plugin_Boilerplate {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-plugin-boilerplate-public.php';
 
         $this->loader = new Wp_Plugin_Boilerplate_Loader();
+        $this->common = new Wp_Plugin_Boilerplate_Common();
 
     }
 
