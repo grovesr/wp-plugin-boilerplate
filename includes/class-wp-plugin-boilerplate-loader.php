@@ -77,7 +77,7 @@ class Wp_Plugin_Boilerplate_Loader {
 	 * return   array                                  The collection of actions and filters registered with WordPress.
 	 */
 	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
-
+		// this syntax appends to $hooks
 		$hooks[] = array(
 			'hook'          => $hook,
 			'component'     => $component,

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * The public-facing functionality of the plugin.
+ * The common functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the public-facing stylesheet and JavaScript.
+ * enqueue the common stylesheet and JavaScript.
  *
  */
-class Wp_Plugin_Boilerplate_Public {
+class Wp_Plugin_Boilerplate_Common {
 
 	/**
 	 * The ID of this plugin.
@@ -38,7 +38,7 @@ class Wp_Plugin_Boilerplate_Public {
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 */
-	public function enqueue_styles() {
+	public function register_styles() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -52,8 +52,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '-css-common');
+		wp_register_style( $this->plugin_name . '-css-common', plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-common.css', array(), $this->version, 'all' );
 
 	}
 
@@ -61,7 +60,7 @@ class Wp_Plugin_Boilerplate_Public {
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 */
-	public function enqueue_scripts() {
+	public function register_scripts() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -75,8 +74,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/colunteer-registration-fields-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name . '-js-common');
+		wp_register_script( $this->plugin_name . '-js-common', plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-common.js', array( 'jquery' ), $this->version, false );
 
 	}
 

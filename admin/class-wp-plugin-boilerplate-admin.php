@@ -52,7 +52,8 @@ class Wp_Plugin_Boilerplate_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-css-admin', plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-css-common');
 
 	}
 
@@ -74,7 +75,8 @@ class Wp_Plugin_Boilerplate_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name . '-js-admin', plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_style( $this->plugin_name . '-js-common');
 
 	}
 
