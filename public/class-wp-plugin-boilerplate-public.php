@@ -75,7 +75,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name . '-js-public', plugin_dir_url( __FILE__ ) . 'js/colunteer-registration-fields-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name . '-js-public', plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name . '-js-common');
 
 	}

@@ -34,48 +34,4 @@ class Wp_Plugin_Boilerplate_Common {
 
 	}
 
-	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 */
-	public function register_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Plugin_Boilerplate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_Plugin_Boilerplate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_register_style( $this->plugin_name . '-css-common', plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-common.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the public-facing side of the site.
-	 *
-	 */
-	public function register_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_Plugin_Boilerplate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_Plugin_Boilerplate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_register_script( $this->plugin_name . '-js-common', plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-common.js', array( 'jquery' ), $this->version, false );
-
-	}
-
 }

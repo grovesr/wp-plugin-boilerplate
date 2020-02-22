@@ -39,6 +39,12 @@ class Wp_Plugin_Boilerplate {
     protected $version;
 
     /**
+     * common class
+     *
+     */
+    protected $class;
+
+    /**
      * Define the core functionality of the plugin.
      *
      * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -107,7 +113,7 @@ class Wp_Plugin_Boilerplate {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-plugin-boilerplate-public.php';
 
         $this->loader = new Wp_Plugin_Boilerplate_Loader();
-        $this->common = new Wp_Plugin_Boilerplate_Common();
+        $this->common = new Wp_Plugin_Boilerplate_Common( $this->get_plugin_name(), $this->get_version() );
 
     }
 
@@ -126,18 +132,6 @@ class Wp_Plugin_Boilerplate {
 
     }
 
-    /**
-     * Register all of the hooks related to the admin area functionality
-     * of the plugin.
-     *
-     */
-    private function define_common_hooks() {
-
-        $plugin_common = new Wp_Plugin_Boilerplate_Common( $this->get_plugin_name(), $this->get_version() );
-        $plugin_common->register_styles();
-        $plugin_common->register_scripts();
-
-    }
 
     /**
      * Register all of the hooks related to the admin area functionality
@@ -164,6 +158,7 @@ class Wp_Plugin_Boilerplate {
 
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        $this->loader->add_action( 'login_enqueue_scripts', $plugin_public, 'enqueue_scripts');
 
     }
 
