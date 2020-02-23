@@ -80,4 +80,8 @@ class Wp_Plugin_Boilerplate_Admin {
 
 	}
 
+	/*
+	* Place admin function here
+	*/
+
 }

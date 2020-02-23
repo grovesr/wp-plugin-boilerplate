@@ -3,8 +3,7 @@
 /**
  * The common functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the common stylesheet and JavaScript.
+ * Defines the plugin name, version
  *
  */
 class Wp_Plugin_Boilerplate_Common {
@@ -33,5 +32,8 @@ class Wp_Plugin_Boilerplate_Common {
 		$this->version = $version;
 
 	}
+	/*
+	* Place common function here
+	*/
 
 }

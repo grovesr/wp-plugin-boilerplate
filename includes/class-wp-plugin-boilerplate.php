@@ -42,7 +42,7 @@ class Wp_Plugin_Boilerplate {
      * common class
      *
      */
-    protected $class;
+    protected $common;
 
     /**
      * Define the core functionality of the plugin.
@@ -144,6 +144,9 @@ class Wp_Plugin_Boilerplate {
 
         $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
         $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+        /*
+        * Add further action hooks for the admin side
+        */
 
     }
 
@@ -158,7 +161,13 @@ class Wp_Plugin_Boilerplate {
 
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        /*
+         * we enqueue the login scripts from the public side
+         */
         $this->loader->add_action( 'login_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+        /*
+        * Add further action hooks for the public side
+        */
 
     }
 
@@ -193,6 +202,15 @@ class Wp_Plugin_Boilerplate {
      */
     public function get_version() {
         return $this->version;
+    }
+
+    /**
+     * The reference to the common class that describes functionality common
+     * to admin and public.
+     *
+     */
+    public function get_common() {
+        return $this->common;
     }
 
 }

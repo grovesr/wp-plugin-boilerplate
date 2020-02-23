@@ -80,4 +80,8 @@ class Wp_Plugin_Boilerplate_Public {
 
 	}
 
+	/*
+	* Place public function here
+	*/
+
 }
