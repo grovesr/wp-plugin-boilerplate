@@ -53,7 +53,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name . '-css-public', plugin_dir_url( __FILE__ ) . 'css/wp-plugin-boilerplate-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '-css-common');
+		wp_enqueue_style( $this->plugin_name . '-css-common', plugin_dir_url( __FILE__ ) . '../common/css/wp-plugin-boilerplate-common.css', array(), $this->version, 'all' );
 
 	}
 
@@ -76,7 +76,7 @@ class Wp_Plugin_Boilerplate_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name . '-js-public', plugin_dir_url( __FILE__ ) . 'js/wp-plugin-boilerplate-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name . '-js-common');
+		wp_enqueue_script( $this->plugin_name . '-js-common', plugin_dir_url( __FILE__ ) . '../common/css/wp-plugin-boilerplate-common.js', array( 'jquery' ), $this->version, 'all');
 
 	}
 
